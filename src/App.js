@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+// import ReactDOM from "react-dom/client";
+// import { Explore, Shop, Cart, Favourite, Account } from './pages';
+// import { ProductCard } from './ProductCard'
+// import { data } from "./products";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Explore, Shop, Cart, Favourite, Account , NotFound} from './pages';
 
-function App() {
+
+
+export const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+      
+        // <React.StrictMode>
+          <BrowserRouter>
+            <Routes>
+              <Route path='/' >
+                <Route path="" element={ <Shop /> } />
+                <Route path='explore' element={ <Explore /> }/>
+                <Route path='cart' element={ <Cart /> }/>
+                <Route path='fav' element={ <Favourite /> }/>
+                <Route path='acc' element={ <Account /> }/>
+              </Route>
+      
+              <Route path='*' element={ <NotFound /> }/>
+      
+      
+            </Routes>
+          </BrowserRouter>
+        // </React.StrictMode>,
+      
   );
 }
-
-export default App;
