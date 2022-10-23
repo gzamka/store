@@ -9,6 +9,7 @@ export const App = () => {
     
           <BrowserRouter>
             <Routes>
+              
               <Route path='/' element={ <NavigationWrapper /> }>
                 <Route path="" element={ <Navigate to='/shop' replace={true} />  } />
                 <Route path='shop' element={ <Shop /> }/>
@@ -18,7 +19,6 @@ export const App = () => {
                 <Route path='acc' element={ <Account /> }/>
                 <Route path='*' element={ <NotFound /> }/>  
               </Route>
-      
       
             </Routes>
           </BrowserRouter>
