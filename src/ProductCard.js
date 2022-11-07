@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -6,18 +7,22 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import { data } from './utility/products'
 import './assets/style.css'
-import AdddButton from './components/AddButton';
+import AddButton from './components/AddButton';
 
-export const ProductCard = () => {
-console.log(data)
+export const ProductCard = (add, setAdd) => {
   
   return (
+    
     data.map((el)=> {
       
+      const AddProduct = (add, setAdd) => {
+        setAdd([...add, el.id]);
+      }
+      
       return(
-<div className="product-card">
+<div className="product-card" key={el.id}>
 
-<Card className='shop-card'  key={el.id} >
+  <Card className='shop-card'   >
             <CardActionArea>
               <CardMedia className='shop-card-photo'
             component="img"
@@ -36,7 +41,7 @@ console.log(data)
 
             <div className='title-and-button' key={el.id}>              
               <h4>${el.price} </h4>    
-              <AdddButton/>
+              <AddButton AddProduct={AddProduct} />
             </div>
 
     </Card>
