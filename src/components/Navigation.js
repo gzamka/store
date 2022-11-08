@@ -1,7 +1,7 @@
-import { Link, Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import * as React from 'react';
-import { useState, useEffect, useRef } from 'react'
+import { useState, useRef } from 'react'
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import BottomNavigation from '@mui/material/BottomNavigation';
@@ -10,72 +10,72 @@ import RestoreIcon from '@mui/icons-material/Restore';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ArchiveIcon from '@mui/icons-material/Archive';
 import Paper from '@mui/material/Paper';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
-import ListItemText from '@mui/material/ListItemText';
-import Avatar from '@mui/material/Avatar';
+// import List from '@mui/material/List';
+// import ListItem from '@mui/material/ListItem';
+// import ListItemAvatar from '@mui/material/ListItemAvatar';
+// import ListItemText from '@mui/material/ListItemText';
+// import Avatar from '@mui/material/Avatar';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import { SpeedDialIcon } from '@mui/material';
 
 
-function refreshMessages() {
-  const getRandomInt = (max) => Math.floor(Math.random() * Math.floor(max));
+// function refreshMessages() {
+//   const getRandomInt = (max) => Math.floor(Math.random() * Math.floor(max));
 
-  return Array.from(new Array(50)).map(
-    () => messageExamples[getRandomInt(messageExamples.length)],
-    console.log(messageExamples)
-  );
-}
+//   return Array.from(new Array(50)).map(
+//     () => messageExamples[getRandomInt(messageExamples.length)],
+//     console.log(messageExamples)
+//   );
+// }
 
-export const FixedBottomNavigation = () => {
+export const Fixedbottomnavigation = () => {
   const [value, setValue] = useState(0);
   const ref = useRef(null);
-  const [messages, setMessages] = useState(() => refreshMessages());
+  // const [messages, setMessages] = useState(() => refreshMessages());
 
-  useEffect(() => {
-    ref.current.ownerDocument.body.scrollBottom = 0;
-    setMessages(refreshMessages());
-  }, [value, setMessages]);
+  // useEffect(() => {
+  //   ref.current.ownerDocument.body.scrollBottom = 0;
+  //   setMessages(refreshMessages());
+  // }, [value, setMessages]);
 
   return (
-    <Box sx={{ pb: 7 }} ref={ref}>
-      <CssBaseline />
-      {/* <List>
-        {messages.map(({ primary, secondary, person }, index) => (
-          <ListItem button key={index + person}>
-            <ListItemAvatar>
-              <Avatar alt="Profile Picture" src={person} />
-            </ListItemAvatar>
-            <ListItemText primary={primary} secondary={secondary} />
-          </ListItem>
-        ))}
-      </List> */}
-      <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, width: '100%' }} elevation={0}>
-        <BottomNavigation
-          // showLabels
-          value={value}
-          onChange={(event, newValue) => {
-            setValue(newValue);
-          }}
-        >
-          <Link to='/shop'> <BottomNavigationAction label="Shop" icon={<RestoreIcon />}  /> </Link>
-          <Link to='/explore'> <BottomNavigationAction label="Explore" icon={<SpeedDialIcon />}  /> </Link>
-          <Link to='/cart'> <BottomNavigationAction label="Cart" icon={<ArchiveIcon />}  /> </Link>
-          <Link to='/fav'> <BottomNavigationAction label="Favourite" icon={<FavoriteIcon />}  /> </Link>
-          <Link to='/acc'> <BottomNavigationAction label="Account" icon={<AccountBoxIcon />}  /> </Link>
-        </BottomNavigation>
-      </Paper>
-    </Box>
+    <h1> hi </h1>
+    // <Box sx={{ pb: 7 }} ref={ref}>
+    //   <CssBaseline />
+    //   {/* <List>
+    //     {messages.map(({ primary, secondary, person }, index) => (
+    //       <ListItem button key={index + person}>
+    //         <ListItemAvatar>
+    //           <Avatar alt="Profile Picture" src={person} />
+    //         </ListItemAvatar>
+    //         <ListItemText primary={primary} secondary={secondary} />
+    //       </ListItem>
+    //     ))}
+    //   </List> */}
+    //   <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, width: '100%' }} elevation={0}>
+    //     <BottomNavigation
+    //       value={value}
+    //       onChange={(event, newValue) => {
+    //         setValue(newValue);
+    //       }}
+    //     >
+    //       <Link to='/shop'> <BottomNavigationAction label="Shop" icon={<RestoreIcon />}  /> </Link>
+    //       <Link to='/explore'> <BottomNavigationAction label="Explore" icon={<SpeedDialIcon />}  /> </Link>
+    //       <Link to='/cart'> <BottomNavigationAction label="Cart" icon={<ArchiveIcon />}  /> </Link>
+    //       <Link to='/fav'> <BottomNavigationAction label="Favourite" icon={<FavoriteIcon />}  /> </Link>
+    //       <Link to='/acc'> <BottomNavigationAction label="Account" icon={<AccountBoxIcon />}  /> </Link>
+    //     </BottomNavigation>
+    //   </Paper>
+    // </Box>
   );
 }
 
-const messageExamples = [
-  {
-    primary: 'Brunch this week?',
-    secondary: "I'll be in the neighbourhood this week. Let's grab a bite to eat",
-    person: '/static/images/avatar/5.jpg',
-  },
+// const messageExamples = [
+//   {
+//     primary: 'Brunch this week?',
+//     secondary: "I'll be in the neighbourhood this week. Let's grab a bite to eat",
+//     person: '/static/images/avatar/5.jpg',
+//   },
   // {
   //   primary: 'Birthday Gift',
   //   secondary: `Do you have a suggestion for a good present for John on his work
@@ -110,4 +110,4 @@ const messageExamples = [
   //     for my backyard and would love to fire up the grill.`,
   //   person: '/static/images/avatar/1.jpg',
   // },
-];
+// ];
