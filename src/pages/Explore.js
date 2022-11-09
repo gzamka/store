@@ -39,8 +39,8 @@ const mystyle = {
         width: '100vh',
         height: '100vh',
         display: 'flex',
-        // flexDirection: 'row',
-        // justifyContent: 'space-between'    
+        flexDirection: 'row',
+        justifyContent: 'space-between'    
 
     },
     
