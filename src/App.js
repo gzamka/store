@@ -6,7 +6,8 @@ import { Explore, Shop, Cart, Favourite, Account , NotFound, NavigationWrapper} 
 
 export const App = () => {
 
-  const [add, setAdd ] = useState([0, 1]);
+  const [cart, setCart ] = useState([]);
+  console.log(cart)
  
   return (
     
@@ -15,9 +16,9 @@ export const App = () => {
               
               <Route path='/' element={ <NavigationWrapper /> }>
                 <Route path="" element={ <Navigate to='/shop' replace={true} />  } />
-                <Route path='shop' element={ <Shop add={add} setAdd={setAdd} /> }/>
+                <Route path='shop' element={ <Shop cart={cart} setCart={setCart} /> }/>
                 <Route path='explore' element={ <Explore /> }/>
-                <Route path='cart' element={ <Cart add={add} setAdd={setAdd} /> }/>
+                <Route path='cart' element={ <Cart cart={cart} setCart={setCart} /> }/>
                 <Route path='fav' element={ <Favourite /> }/>
                 <Route path='acc' element={ <Account /> }/>
                 <Route path='*' element={ <NotFound /> }/>  

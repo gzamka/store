@@ -9,15 +9,17 @@ import { data } from './utility/products'
 import './assets/style.css'
 import AddButton from './components/AddButton';
 
-export const ProductCard = ({add, setAdd}) => {
+export const ProductCard = ({cart, setCart}) => {
   
+  console.log(cart)
   return (
-
     
     data.map((el)=> {
       
       const AddProduct = () => {
-        setAdd([...add, el.id]);
+
+        setCart([...cart, el.id]);
+
       }
       
       return(

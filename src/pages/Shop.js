@@ -1,11 +1,13 @@
 import { ProductCard } from "../ProductCard";
 
-export const Shop = () => {
+export const Shop = ({cart, setCart}) => {
+
+  console.log('shop', cart)
   return (
     
     // <div className="product-card">
 
-      <ProductCard />
+      <ProductCard cart={cart} setCart={setCart} />
 
     // </div> 
   ) 

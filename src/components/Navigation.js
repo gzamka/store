@@ -31,42 +31,35 @@ import { SpeedDialIcon } from '@mui/material';
 export const Fixedbottomnavigation = () => {
   const [value, setValue] = useState(0);
   const ref = useRef(null);
-  // const [messages, setMessages] = useState(() => refreshMessages());
-
-  // useEffect(() => {
-  //   ref.current.ownerDocument.body.scrollBottom = 0;
-  //   setMessages(refreshMessages());
-  // }, [value, setMessages]);
 
   return (
-    <h1> hi </h1>
-    // <Box sx={{ pb: 7 }} ref={ref}>
-    //   <CssBaseline />
-    //   {/* <List>
-    //     {messages.map(({ primary, secondary, person }, index) => (
-    //       <ListItem button key={index + person}>
-    //         <ListItemAvatar>
-    //           <Avatar alt="Profile Picture" src={person} />
-    //         </ListItemAvatar>
-    //         <ListItemText primary={primary} secondary={secondary} />
-    //       </ListItem>
-    //     ))}
-    //   </List> */}
-    //   <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, width: '100%' }} elevation={0}>
-    //     <BottomNavigation
-    //       value={value}
-    //       onChange={(event, newValue) => {
-    //         setValue(newValue);
-    //       }}
-    //     >
-    //       <Link to='/shop'> <BottomNavigationAction label="Shop" icon={<RestoreIcon />}  /> </Link>
-    //       <Link to='/explore'> <BottomNavigationAction label="Explore" icon={<SpeedDialIcon />}  /> </Link>
-    //       <Link to='/cart'> <BottomNavigationAction label="Cart" icon={<ArchiveIcon />}  /> </Link>
-    //       <Link to='/fav'> <BottomNavigationAction label="Favourite" icon={<FavoriteIcon />}  /> </Link>
-    //       <Link to='/acc'> <BottomNavigationAction label="Account" icon={<AccountBoxIcon />}  /> </Link>
-    //     </BottomNavigation>
-    //   </Paper>
-    // </Box>
+    <Box sx={{ pb: 7 }} ref={ref}>
+      <CssBaseline />
+      {/* <List>
+        {messages.map(({ primary, secondary, person }, index) => (
+          <ListItem button key={index + person}>
+            <ListItemAvatar>
+              <Avatar alt="Profile Picture" src={person} />
+            </ListItemAvatar>
+            <ListItemText primary={primary} secondary={secondary} />
+          </ListItem>
+        ))}
+      </List> */}
+      <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, width: '100%' }} elevation={0}>
+        <BottomNavigation
+          value={value}
+          onChange={(event, newValue) => {
+            setValue(newValue);
+          }}
+        >
+          <Link to='/shop'> <BottomNavigationAction label="Shop" icon={<RestoreIcon />}  /> </Link>
+          <Link to='/explore'> <BottomNavigationAction label="Explore" icon={<SpeedDialIcon />}  /> </Link>
+          <Link to='/cart'> <BottomNavigationAction label="Cart" icon={<ArchiveIcon />}  /> </Link>
+          <Link to='/fav'> <BottomNavigationAction label="Favourite" icon={<FavoriteIcon />}  /> </Link>
+          <Link to='/acc'> <BottomNavigationAction label="Account" icon={<AccountBoxIcon />}  /> </Link>
+        </BottomNavigation>
+      </Paper>
+    </Box>
   );
 }
 
