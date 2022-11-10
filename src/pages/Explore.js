@@ -1,3 +1,4 @@
+import { CategoryRounded } from "@mui/icons-material";
 import { height, style } from "@mui/system";
 import { useState, useEffect } from "react";
 import { data } from "../utility/products";
@@ -10,18 +11,21 @@ export const Explore = () => {
     // const changeBackground = (e) => {
     //     e.target.style.backgroundColor = 'red';
     // }
-
+let Categories = [];
 return (
     <div>
         <h1> Categories </h1>
-        <div style={{...mystyle.categoryContainer}}>
+        <div 
+        // style={{...mystyle.categoryContainer}}
+        >
             
 
             {data.map((el) => {
-                
+
                 return (
-                    <div key={el.id} 
-                    style={{...mystyle.category }}>
+                    <div key={el.id}
+                    // style={{...mystyle.category }}
+                    >
                                 {el.category}
                             </div>
                         ) 

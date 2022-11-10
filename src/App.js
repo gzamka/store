@@ -6,7 +6,7 @@ import { Explore, Shop, Cart, Favourite, Account , NotFound, NavigationWrapper} 
 
 export const App = () => {
 
-  const [cart, setCart ] = useState([]);
+  const [cart, setCart ] = useState([0, 1, 1, 2, 3]);
   console.log(cart)
  
   return (
