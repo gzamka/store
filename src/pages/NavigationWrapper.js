@@ -1,12 +1,12 @@
 import { Outlet } from 'react-router-dom';
 
-import { Fixedbottomnavigation } from '../components/Navigation';
+import { Navigation } from '../components';
 
 export const NavigationWrapper = () => {
     return (
         <>
             <Outlet />
-            <Fixedbottomnavigation/>
+            <Navigation/>
 
         </>
     )

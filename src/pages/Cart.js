@@ -1,24 +1,34 @@
 import { useEffect } from "react";
 import { data } from "../utility/products";
+import { ProductCard } from '../ProductCard'
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { CardActionArea } from '@mui/material';
+import '../assets/style.css'
+import { MyCard, AddButton, LongButton } from "../components";
 
 export const Cart = ({ cart, setCart }) => {
 
-    return (
+    console.log(cart)
+  return (
+    <div>
+    <h2> My cart </h2>
+    {cart.map((el)=> {
+            
+            return (
+              <div>
 
-        data.filter((el) => {
-            cart.filter((element) => {
-                if(element == el.id) {
-                    console.log(el)
-                    return (
-                        <div>
-
-                        
-                        <h1> {el} </h1>
-                        </div>
-                        )
-                    }
-                })
-            })
-        
+              <MyCard cart={cart} setCart={setCart} />
+              </div>
         )
+    })  
+    }
+
+    {(cart.length > 0) ? <LongButton/> : <h5> No products added </h5>  }
+    
+    </div>
+  )
+
 };

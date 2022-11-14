@@ -28,7 +28,7 @@ import { SpeedDialIcon } from '@mui/material';
 //   );
 // }
 
-export const Fixedbottomnavigation = () => {
+export const Navigation = () => {
   const [value, setValue] = useState(0);
   const ref = useRef(null);
 
